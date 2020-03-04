@@ -10,7 +10,7 @@ namespace ScaleConversion2
     {
         static void Main(string[] args)
         {
-            string key = "CDD#FGABQ";
+            string key = "CDD#FGAB";
             //string con;
             string[] notes = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" };
             List<string> arr = new List<string>();
@@ -49,10 +49,40 @@ namespace ScaleConversion2
                     Console.WriteLine(c + " valid ");
             }
             string c3 = arr[0];
+            string c4 = "";
+            int index=0;
             int ind = arr.IndexOf(c3);
-            for(int i=ind;i<arr.Count();i++)
+            int[] ar = new int[12];
+            string ss = "";// ind.ToString();
+           // index = Array.IndexOf(notes, c3);
+            for (int i= (arr.Count())-1; i>=0;i--)
             {
+                //Console.WriteLine("i= "+i);
+                c4 = arr[i];
+                //ss = index.ToString();
+                index = Array.IndexOf(notes,c4);
+                //Console.WriteLine(index);
+                if(i>0)
+                {
+                    //int t = ar[i-1];
 
+                    ar[i] = index; //- ar[i - 1];
+                   // Console.WriteLine(ar[i]);
+                }
+            }
+
+            for(int i =ar.Length-1;i>=0;i--)
+            {
+                if (i > 0)
+                {
+                    ar[i] =ar[i]-  ar[i - 1];
+                   // Console.WriteLine("i= " + i);
+                   //Console.WriteLine(ar[i]);
+                }
+            }
+            for(int i =0;i<arr.Count();i++)
+            {
+                Console.Write(ar[i]);
             }
         }
     }
