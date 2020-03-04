@@ -57,11 +57,11 @@ namespace ScaleConversion2
            // index = Array.IndexOf(notes, c3);
             for (int i= (arr.Count())-1; i>=0;i--)
             {
-                //Console.WriteLine("i= "+i);
+                Console.WriteLine("i= "+i);
                 c4 = arr[i];
                 //ss = index.ToString();
                 index = Array.IndexOf(notes,c4);
-                //Console.WriteLine(index);
+                Console.WriteLine(index);
                 if(i>0)
                 {
                     //int t = ar[i-1];
@@ -80,10 +80,12 @@ namespace ScaleConversion2
                    //Console.WriteLine(ar[i]);
                 }
             }
-            for(int i =0;i<arr.Count();i++)
+            for(int i =1;i<arr.Count();i++)
             {
-                Console.Write(ar[i]);
+               // Console.Write(ar[i]);
+                ss = ss + ar[i].ToString();
             }
+            Console.WriteLine(ss);
         }
     }
 }
